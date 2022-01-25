@@ -40,3 +40,12 @@ CREATE TABLE PilotosNaves (
 	FOREIGN KEY (IdPiloto) REFERENCES Pilotos(IdPiloto),
 	PRIMARY KEY (IdPiloto, IdNave)
 );
+
+CREATE TABLE HistoricoViagens (
+	IdNave int NOT NULL,
+	IdPiloto int NOT NULL,
+	DtSaida datetime NOT NULL,
+	DtChegada datetime NULL,
+	CONSTRAINT FK_HistoricoViagens_PilotosNaves FOREIGN KEY(IdNave, IdPiloto)
+	REFERENCES PilotosNaves (IdNave, IdPiloto)
+);
