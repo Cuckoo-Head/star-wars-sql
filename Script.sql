@@ -29,3 +29,14 @@ CREATE TABLE Pilotos (
 	PRIMARY KEY (IdPiloto),
 	CONSTRAINT FK_PlanetaDoPiloto FOREIGN KEY (IdPlaneta) REFERENCES Planetas(IdPlaneta)
 );
+
+CREATE TABLE PilotosNaves (
+	IdPiloto int NOT NULL,
+	IdNave int NOT NULL,
+	FlagAutorizacao bit NOT NULL DEFAULT 1,
+	CONSTRAINT FK_PilotosNaves_Naves
+	FOREIGN KEY (IdNave) REFERENCES Naves(IdNave),
+	CONSTRAINT FK_PilotosNaves_Pilotos
+	FOREIGN KEY (IdPiloto) REFERENCES Pilotos(IdPiloto),
+	PRIMARY KEY (IdPiloto, IdNave)
+);
