@@ -11,3 +11,12 @@ CREATE TABLE Planetas(
 	PRIMARY KEY (IdPlaneta)
 );
 
+CREATE TABLE Naves(
+	IdNave int NOT NULL AUTO_INCREMENT,
+	Nome varchar(100) NOT NULL,
+	Modelo varchar(100) NOT NULL,
+	NumPassageiros int NOT NULL,
+	Carga float NOT NULL,
+	Classe varchar(100) NOT NULL,
+	PRIMARY KEY (IdNave)
+);
