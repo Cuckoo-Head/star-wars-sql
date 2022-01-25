@@ -20,3 +20,12 @@ CREATE TABLE Naves(
 	Classe varchar(100) NOT NULL,
 	PRIMARY KEY (IdNave)
 );
+
+CREATE TABLE Pilotos (
+	IdPiloto int NOT NULL,
+	Nome varchar(200) NOT NULL,
+	AnoNasc varchar(10) NOT NULL,
+	IdPlaneta int NOT NULL,
+	PRIMARY KEY (IdPiloto),
+	CONSTRAINT FK_PlanetaDoPiloto FOREIGN KEY (IdPlaneta) REFERENCES Planetas(IdPlaneta)
+);
